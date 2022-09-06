@@ -130,7 +130,7 @@ function App() {
             strokeColor: '#5347AA',
             strokeOpacity: 0.5,
             strokeWeight: 2,
-            fillColor: '#FBBA00',
+            fillColor: '#E51D1A',
             fillOpacity: 0.3,
           })
         );

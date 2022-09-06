@@ -130,7 +130,7 @@ function App() {
             strokeColor: '#5347AA',
             strokeOpacity: 0.5,
             strokeWeight: 2,
-            fillColor: '#FBBA00',
+            fillColor: '#E51D1A',
             fillOpacity: 0.3,
           })
         );
@@ -184,7 +184,7 @@ function App() {
           strokeColor: '#5347AA',
           strokeOpacity: 0.5,
           strokeWeight: 2,
-          fillColor: '#E51D1A',
+          fillColor: '#FBBA00',
           fillOpacity: 0.3,
         })
       );
