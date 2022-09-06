@@ -138,15 +138,13 @@ function App() {
       }
       searchLocToAddress(map.getCenter());
       if (marker != null && circle != null) {
-        if (navermaps.Event.hasListener(map, 'bounds_changed')) {
-          navermaps.Event.addListener(map, 'bounds_changed', () => {
+        if (navermaps.Event.hasListener(map, 'dragend')) {
+          navermaps.Event.addListener(map, 'dragend', () => {
             marker.setPosition(map.getCenter());
             circle.setCenter(map.getCenter());
+            searchLocToAddress(map.getCenter());
           });
         }
-        navermaps.Event.addListener(map, 'dragend', () => {
-          searchLocToAddress(map.getCenter());
-        });
       }
       makeNowUserPosMarker();
     }

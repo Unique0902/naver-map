@@ -119,6 +119,10 @@ function App() {
           new navermaps.Marker({
             position: nowUserPosition,
             map: map,
+            icon: {
+              content: '<img src="favicon.ico">',
+              size: new navermaps.Size(50, 52),
+            },
           })
         );
       }
@@ -142,11 +146,9 @@ function App() {
           navermaps.Event.addListener(map, 'bounds_changed', () => {
             marker.setPosition(map.getCenter());
             circle.setCenter(map.getCenter());
+            searchLocToAddress(map.getCenter());
           });
         }
-        navermaps.Event.addListener(map, 'dragend', () => {
-          searchLocToAddress(map.getCenter());
-        });
       }
       makeNowUserPosMarker();
     }

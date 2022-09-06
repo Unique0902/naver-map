@@ -2,7 +2,6 @@
   "name": "template",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://unique0902.github.io/naver-map/",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.2.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
@@ -12,7 +11,6 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
-    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-daum-postcode": "^3.1.1",
     "react-dom": "^18.2.0",

@@ -144,9 +144,12 @@ function App() {
             circle.setCenter(map.getCenter());
           });
         }
-        navermaps.Event.addListener(map, 'dragend', () => {
-          searchLocToAddress(map.getCenter());
-        });
+        if (navermaps.Event.hasListener(map, 'touchend')) {
+          navermaps.Event.addListener(map, 'touchend', () => {
+            console.log('hi');
+            searchLocToAddress(map.getCenter());
+          });
+        }
       }
       makeNowUserPosMarker();
     }

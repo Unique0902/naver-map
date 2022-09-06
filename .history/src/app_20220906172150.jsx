@@ -115,10 +115,15 @@ function App() {
       map.setCenter(nowUserPosition); // 중심 좌표 이동
       if (marker == null) {
         const HOME_PATH = window.HOME_PATH || '.';
+        console.log(HOME_PATH);
         setMarker(
           new navermaps.Marker({
             position: nowUserPosition,
             map: map,
+            icon: {
+              url: HOME_PATH + 'src/img/nowPos.png',
+              size: new navermaps.Size(50, 52),
+            },
           })
         );
       }
@@ -142,11 +147,9 @@ function App() {
           navermaps.Event.addListener(map, 'bounds_changed', () => {
             marker.setPosition(map.getCenter());
             circle.setCenter(map.getCenter());
+            searchLocToAddress(map.getCenter());
           });
         }
-        navermaps.Event.addListener(map, 'dragend', () => {
-          searchLocToAddress(map.getCenter());
-        });
       }
       makeNowUserPosMarker();
     }

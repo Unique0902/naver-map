@@ -144,7 +144,8 @@ function App() {
             circle.setCenter(map.getCenter());
           });
         }
-        navermaps.Event.addListener(map, 'dragend', () => {
+        navermaps.Event.addListener(map, 'bounds_changed', () => {
+          console.log('hi');
           searchLocToAddress(map.getCenter());
         });
       }

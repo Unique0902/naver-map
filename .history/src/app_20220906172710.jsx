@@ -142,11 +142,9 @@ function App() {
           navermaps.Event.addListener(map, 'bounds_changed', () => {
             marker.setPosition(map.getCenter());
             circle.setCenter(map.getCenter());
+            searchLocToAddress(map.getCenter());
           });
         }
-        navermaps.Event.addListener(map, 'dragend', () => {
-          searchLocToAddress(map.getCenter());
-        });
       }
       makeNowUserPosMarker();
     }
