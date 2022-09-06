@@ -1,0 +1,11 @@
+button {
+  background: none;
+  border: none;
+}
+.startBtn {
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+.arriveBtn {
+  width: 100%;
+}
