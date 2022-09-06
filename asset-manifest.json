@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/naver-map/static/css/main.daeafccc.css",
+    "main.js": "/naver-map/static/js/main.6cc218c1.js",
+    "index.html": "/naver-map/index.html",
+    "main.daeafccc.css.map": "/naver-map/static/css/main.daeafccc.css.map",
+    "main.6cc218c1.js.map": "/naver-map/static/js/main.6cc218c1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.daeafccc.css",
+    "static/js/main.6cc218c1.js"
+  ]
+}
