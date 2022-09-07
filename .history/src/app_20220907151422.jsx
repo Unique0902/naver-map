@@ -149,6 +149,7 @@ function App() {
         });
       }
       makeNowUserPosMarker();
+    } 
     }
   }, [map, nowUserPosition, marker, circle]);
 

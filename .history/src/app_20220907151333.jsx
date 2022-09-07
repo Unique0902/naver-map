@@ -149,6 +149,12 @@ function App() {
         });
       }
       makeNowUserPosMarker();
+    } else {
+      setTimeout(() => {
+        if (nowUserPosition === null) {
+          console.log(nowUserPosition);
+        }
+      }, 5000);
     }
   }, [map, nowUserPosition, marker, circle]);
 

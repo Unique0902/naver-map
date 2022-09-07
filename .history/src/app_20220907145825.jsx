@@ -115,6 +115,7 @@ function App() {
     if (map != null && nowUserPosition != null) {
       map.setCenter(nowUserPosition); // 중심 좌표 이동
       if (marker == null) {
+        const HOME_PATH = window.HOME_PATH || '.';
         setMarker(
           new navermaps.Marker({
             position: nowUserPosition,

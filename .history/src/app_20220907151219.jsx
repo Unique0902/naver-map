@@ -149,6 +149,12 @@ function App() {
         });
       }
       makeNowUserPosMarker();
+    } else {
+      setTimeout(() => {
+        if (nowUserPosition == null) {
+          alert('위치를 찾을수 없습니다. 문제가 있어요');
+        }
+      }, 5000);
     }
   }, [map, nowUserPosition, marker, circle]);
 

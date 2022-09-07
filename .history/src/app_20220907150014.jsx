@@ -113,6 +113,8 @@ function App() {
 
   useEffect(() => {
     if (map != null && nowUserPosition != null) {
+      if (nowUserPosMarker == null) {
+      }
       map.setCenter(nowUserPosition); // 중심 좌표 이동
       if (marker == null) {
         setMarker(

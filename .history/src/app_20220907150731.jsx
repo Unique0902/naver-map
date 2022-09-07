@@ -112,29 +112,56 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (map != null && nowUserPosition != null) {
-      map.setCenter(nowUserPosition); // 중심 좌표 이동
-      if (marker == null) {
-        setMarker(
-          new navermaps.Marker({
-            position: nowUserPosition,
-            map: map,
-          })
-        );
-      }
-      if (circle == null) {
-        setCircle(
-          new navermaps.Circle({
-            map: map,
-            center: nowUserPosition,
-            radius: 20,
-            strokeColor: '#5347AA',
-            strokeOpacity: 0.5,
-            strokeWeight: 2,
-            fillColor: '#FBBA00',
-            fillOpacity: 0.3,
-          })
-        );
+    if (map != null) {
+      if (nowUserPosMarker == null) {
+        console.log('wow');
+        if (marker == null) {
+          setMarker(
+            new navermaps.Marker({
+              position: new navermaps.LatLng(37.3595704, 127.105399),
+              map: map,
+            })
+          );
+        }
+        if (circle == null) {
+          setCircle(
+            new navermaps.Circle({
+              map: map,
+              center: new navermaps.LatLng(37.3595704, 127.105399),
+              radius: 20,
+              strokeColor: '#5347AA',
+              strokeOpacity: 0.5,
+              strokeWeight: 2,
+              fillColor: '#FBBA00',
+              fillOpacity: 0.3,
+            })
+          );
+        }
+      } else {
+        console.log('hi');
+        map.setCenter(nowUserPosition); // 중심 좌표 이동
+        if (marker == null) {
+          setMarker(
+            new navermaps.Marker({
+              position: nowUserPosition,
+              map: map,
+            })
+          );
+        }
+        if (circle == null) {
+          setCircle(
+            new navermaps.Circle({
+              map: map,
+              center: nowUserPosition,
+              radius: 20,
+              strokeColor: '#5347AA',
+              strokeOpacity: 0.5,
+              strokeWeight: 2,
+              fillColor: '#FBBA00',
+              fillOpacity: 0.3,
+            })
+          );
+        }
       }
       searchLocToAddress(map.getCenter());
       if (marker != null && circle != null) {
