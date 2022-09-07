@@ -150,8 +150,6 @@ function App() {
         });
       }
       makeNowUserPosMarker();
-    } else {
-      alert('no location!');
     }
   }, [map, nowUserPosition, marker, circle]);
 

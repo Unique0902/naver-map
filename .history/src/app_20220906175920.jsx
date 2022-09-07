@@ -95,7 +95,7 @@ function App() {
           map: map,
           animation: 1,
           icon: {
-            url: 'https://www.emojiall.com/ko/emoji/%F0%9F%94%B4',
+            content: '<img src="./images/nowPos.png" />',
             size: new navermaps.Size(50, 52),
             anchor: new navermaps.Point(11, 35),
           },
@@ -150,8 +150,6 @@ function App() {
         });
       }
       makeNowUserPosMarker();
-    } else {
-      alert('no location!');
     }
   }, [map, nowUserPosition, marker, circle]);
 
