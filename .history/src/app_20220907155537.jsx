@@ -81,7 +81,6 @@ function App() {
           position.coords.latitude,
           position.coords.longitude
         );
-        alert(position.coords.latitude, position.coords.longitude);
         setNowUserPosition(pos);
       },
       () => {
