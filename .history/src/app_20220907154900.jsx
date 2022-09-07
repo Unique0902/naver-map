@@ -85,9 +85,7 @@ function App() {
         setPoss(position.coords.latitude);
         setNowUserPosition(pos);
       },
-      () => {
-        alert('주소를 찾을수없습니다!');
-      },
+      () => {},
       { enableHighAccuracy: true }
     );
   };

@@ -29,7 +29,6 @@ function App() {
   const [arriveAddress, setArriveAddress] = useState('');
   const [arriveMarker, setArriveMarker] = useState(null);
   const [arriveCircle, setArriveCircle] = useState(null);
-  const [poss, setPoss] = useState('');
 
   const searchAddressToCoordinate = (address) => {
     navermaps.Service.geocode(
@@ -82,12 +81,9 @@ function App() {
           position.coords.latitude,
           position.coords.longitude
         );
-        setPoss(position.coords.latitude);
         setNowUserPosition(pos);
       },
-      () => {
-        alert('주소를 찾을수없습니다!');
-      },
+      () => {},
       { enableHighAccuracy: true }
     );
   };
@@ -323,7 +319,7 @@ function App() {
           <p>도착: {nowSettingPos === 'arrive' ? searchedAddress : ' '}</p>
         </button>
       </section>
-      <section>{poss}</section>
+      <section>{nowUserPosition}</section>
     </>
   );
 }
