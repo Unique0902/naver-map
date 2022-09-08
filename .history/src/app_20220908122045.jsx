@@ -114,7 +114,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (window.nowLocation != undefined) {
+    if (window.nowLocation != null) {
       const pos = new navermaps.LatLng(
         window.nowLocation.latitude,
         window.nowLocation.longitude

@@ -114,13 +114,11 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (window.nowLocation != undefined) {
-      const pos = new navermaps.LatLng(
-        window.nowLocation.latitude,
-        window.nowLocation.longitude
-      );
-      setNowUserPosition(pos);
-    }
+    const pos = new navermaps.LatLng(
+      window.nowLocation.latitude,
+      window.nowLocation.longitude
+    );
+    setNowUserPosition(pos);
   }, [window.nowLocation]);
 
   useEffect(() => {

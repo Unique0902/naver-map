@@ -111,17 +111,8 @@ function App() {
   useEffect(() => {
     setMap(mapRef.current.instance);
     getNowUserPosition();
+    console.log(window.nowLocation);
   }, []);
-
-  useEffect(() => {
-    if (window.nowLocation != undefined) {
-      const pos = new navermaps.LatLng(
-        window.nowLocation.latitude,
-        window.nowLocation.longitude
-      );
-      setNowUserPosition(pos);
-    }
-  }, [window.nowLocation]);
 
   useEffect(() => {
     if (map != null && nowUserPosition != null) {
@@ -162,7 +153,7 @@ function App() {
       }
       makeNowUserPosMarker();
     }
-  }, [map, nowUserPosition, marker, circle]);
+  }, [map, nowUserPosition, marker, circle, window.nowLocation]);
 
   useEffect(() => {
     if (searchedLoc != null) {
