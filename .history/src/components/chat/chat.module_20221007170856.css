@@ -1,0 +1,42 @@
+.chat {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 20%;
+  width: 100%;
+  margin-top: 1em;
+}
+
+.imgSec {
+  width: 10%;
+  margin: 0 2%;
+}
+.userImg {
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+}
+.timeSec {
+  height: 100%;
+  width: 14%;
+  position: relative;
+}
+.time {
+  color: gray;
+  font-size: 0.5em;
+  position: absolute;
+  bottom: 15%;
+}
+.text {
+  border-radius: 10px;
+  max-width: 80%;
+  padding: 0.5em;
+}
+.myColor {
+  color: white;
+  background-color: #fbba00;
+}
+.otherColor {
+  color: black;
+  background-color: #f2f3f7;
+}

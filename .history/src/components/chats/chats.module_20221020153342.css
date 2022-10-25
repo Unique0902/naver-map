@@ -1,0 +1,40 @@
+.chattingSec {
+  width: 100vw;
+  height: 39.5vh;
+  border-top: 2px solid lightgray;
+}
+.chatsSec {
+  height: 79%;
+  background-color: white;
+  overflow-y: auto;
+  padding: 0.5em;
+}
+.msgForm {
+  height: 15%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.chatInform {
+  background-color: lightgray;
+  border: none;
+  border-radius: 10px;
+  width: 60%;
+  height: 80%;
+  padding: 0 2em;
+}
+.sendBtn {
+  width: 1.1em;
+  height: 1.1em;
+}
+.noChatting {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.noChattingText {
+  color: gray;
+  text-align: center;
+}

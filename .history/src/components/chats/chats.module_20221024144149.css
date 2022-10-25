@@ -1,0 +1,23 @@
+.chattingSec {
+  width: 100vw;
+  height: 39.5vh;
+  border-top: 2px solid lightgray;
+}
+.chatsSec {
+  height: 79%;
+  background-color: white;
+  overflow-y: auto;
+  padding: 0.5em;
+}
+
+.noChatting {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.noChattingText {
+  color: gray;
+  text-align: center;
+}
