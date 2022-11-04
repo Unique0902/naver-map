@@ -1,0 +1,49 @@
+.matchingSec {
+  position: absolute;
+  width: 70vw;
+  height: 70vw;
+  top: 30vh;
+  left: 15vw;
+}
+.loadingSpinner {
+  background: none;
+  border: 8px solid lightgray;
+  border-radius: 50%;
+  border-top: 8px solid #fbba00;
+  width: 90%;
+  height: 90%;
+  animation: spin 2s linear infinite;
+  margin: auto;
+}
+.loadingBorder {
+  background: none;
+  border-radius: 50%;
+  border: 8px solid #ff5023;
+  width: 90%;
+  height: 90%;
+}
+.matchingStatus {
+  position: absolute;
+  display: flex;
+  top: 20%;
+  left: 20%;
+  border-radius: 50%;
+  width: 60%;
+  height: 60%;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  opacity: 90%;
+}
+.matchingStatusText {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

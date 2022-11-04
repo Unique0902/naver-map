@@ -1,0 +1,16 @@
+.checkSec {
+  height: 100%;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  margin-bottom: 2em;
+  font-size: 1.3rem;
+}
+.loc {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,25 @@
+.destinationResult {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  padding: 0.5em;
+  justify-content: space-around;
+  top: 5vh;
+  left: 5vw;
+  width: 90vw;
+  border: 1px solid lightgray;
+  background-color: white;
+  border-radius: 20px;
+  font-size: 0.5em;
+  align-items: center;
+}
+.startText {
+  width: 40%;
+}
+.middleText {
+  width: 20%;
+  text-align: center;
+}
+.arriveText {
+  width: 40%;
+}

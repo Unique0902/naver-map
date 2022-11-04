@@ -1,0 +1,13 @@
+.radiusSec {
+  display: flex;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  padding: 10px;
+  background-color: white;
+  border-radius: 30px;
+  border: 1px solid black;
+}
+.radiusSelect {
+  border-radius: 20px;
+}

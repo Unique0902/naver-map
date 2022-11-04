@@ -1,0 +1,30 @@
+.checkSec {
+  height: 100%;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  margin-bottom: 2em;
+  font-size: 1.3rem;
+}
+.loc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 70%;
+}
+.time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 70%;
+}
+.miniTitle {
+  margin-right: 1em;
+}
+.text {
+  font-size: 1.4em;
+}

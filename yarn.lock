@@ -7598,6 +7598,13 @@ react-scripts@5.0.1:
   optionalDependencies:
     fsevents "^2.3.2"
 
+react-scrollable-picker@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-scrollable-picker/-/react-scrollable-picker-1.0.2.tgz#872f6c766752177f1b308e1748c02b90c5f6ab60"
+  integrity sha512-e6uKlRJGiqOMXkZLtkn92s6veFc9pWx2fY/nScbqAuSF8JRVv1q0AEXbSyLpI51SWYEUdIo7uBu7ISsDBZWEaA==
+  dependencies:
+    prop-types "^15.6.0"
+
 react@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"

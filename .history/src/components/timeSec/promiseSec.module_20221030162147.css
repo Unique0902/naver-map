@@ -1,0 +1,14 @@
+.promiseSec {
+  width: 100vw;
+  height: 79.5vh;
+  background-color: white;
+  border-top: 2px solid lightgray;
+  padding: 0.6em;
+}
+.titleSec {
+  border-bottom: 1px solid lightgray;
+}
+.title {
+  text-align: center;
+  font-size: 1rem;
+}

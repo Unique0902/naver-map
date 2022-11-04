@@ -1,0 +1,137 @@
+button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+}
+.startBtn {
+  width: 100%;
+  border-bottom: 1px solid black;
+  text-align: left;
+  background-color: white;
+  height: 10vh;
+}
+.arriveBtn {
+  width: 100%;
+  height: 10vh;
+  text-align: left;
+  background-color: white;
+}
+.nowLoc {
+  font-size: 2.4rem;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  color: #fbba00;
+}
+.nowDestination {
+  font-size: 2.4rem;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  top: 70vh;
+  cursor: pointer;
+  color: black;
+}
+.daum {
+  position: absolute;
+  top: 0;
+  background-color: white;
+  z-index: 10;
+}
+
+.selBtns {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 25%;
+}
+.selectBtn {
+  background-color: #fbba00;
+  flex-basis: 40%;
+  border-radius: 25px;
+  font-size: 2rem;
+}
+.matchingBtn {
+  background-color: #fbba00;
+  flex-basis: 40%;
+  border-radius: 25px;
+  font-size: 2rem;
+}
+.backBtn {
+  background-color: blue;
+  margin-left: 1em;
+  flex-basis: 40%;
+  border-radius: 25px;
+  font-size: 2rem;
+}
+.daumCancelSec {
+  background-color: #0b65c8;
+  height: 8vh;
+}
+.daumCancelBtn {
+  background-color: #0b65c8;
+  position: absolute;
+  right: 0.2em;
+  top: 0.2em;
+  border-radius: 50%;
+  font-size: 2rem;
+}
+
+.matchingCancelBtn {
+  color: white;
+  background-color: #3c4451;
+  border-radius: 25px;
+  position: absolute;
+  top: 1em;
+  right: 0.5em;
+  width: 30%;
+  height: 7%;
+}
+
+.promiseStartBtn {
+  color: white;
+  background-color: #000000;
+  border-radius: 25px;
+  position: absolute;
+  top: 49%;
+  left: 5%;
+  width: 90%;
+  height: 7%;
+}
+
+.cancelBtn {
+  position: absolute;
+  top: 3vh;
+  right: 1em;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  font-weight: bold;
+}
+.disposePromiseBtns {
+  position: absolute;
+  top: 49%;
+  width: 100%;
+  height: 7%;
+  display: flex;
+}
+.promiseCancelBtn {
+  background-color: #3c4451;
+  border: 1px solid black;
+  height: 100%;
+}
+.promiseCompeleteBtn {
+  background-color: #fbba00;
+  border: 1px solid black;
+  height: 100%;
+}
