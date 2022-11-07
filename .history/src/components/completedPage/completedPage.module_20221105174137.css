@@ -1,0 +1,19 @@
+.body {
+  height: 100vh;
+  background-color: white;
+}
+.textSec {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text {
+  font-size: 1.5rem;
+  color: black;
+}
+.btns {
+  height: 20vh;
+  display: flex;
+  flex-direction: row;
+}

@@ -1,0 +1,7 @@
+.menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 1%;
+  background-color: black;
+}

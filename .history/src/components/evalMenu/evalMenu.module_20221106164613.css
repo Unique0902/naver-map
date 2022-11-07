@@ -1,0 +1,23 @@
+.menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  right: 1%;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 0.5em;
+  top: 5%;
+  width: 60%;
+  height: 9em;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+.select {
+  width: 100%;
+  padding: 0;
+  text-align: start;
+  font-size: 1.2rem;
+  font-weight: 400;
+  height: 25%;
+}
