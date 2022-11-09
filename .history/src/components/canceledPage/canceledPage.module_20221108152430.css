@@ -1,0 +1,158 @@
+.body {
+  height: 100vh;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 1em 1.5em;
+}
+.textSec {
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+}
+.text {
+  font-size: 1.6rem;
+  color: black;
+  max-width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+.nickname {
+  margin: 0;
+  display: inline;
+  color: #fbba00;
+}
+.btns {
+  height: 9%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.backBtn {
+  width: 46%;
+  height: 100%;
+  background-color: #3c4451;
+  color: white;
+  border-radius: 10px;
+}
+.homeBtn {
+  height: 100%;
+  width: 46%;
+  background-color: #fbba00;
+  color: white;
+  border-radius: 10px;
+}
+.evaluationSec {
+  height: 66%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  margin-bottom: 10%;
+}
+.input {
+  background-color: lightgray;
+  border-radius: 8px;
+  width: 95%;
+  border: none;
+  box-sizing: border-box;
+  padding: 0.8em;
+  margin-top: 0.5em;
+}
+.praiseTitle {
+  margin: 0;
+}
+.praiseSec {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 1.5em 0;
+}
+.priaseTitleSec {
+  margin-bottom: 2em;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.praise {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkBox {
+  width: 1em;
+  height: 1em;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  margin-right: 1em;
+}
+.submitBtn {
+  width: 100%;
+  height: 3em;
+  color: white;
+  border-radius: 8px;
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checked {
+  background-color: #fbba00;
+}
+.checked::after {
+  content: '✔';
+  font-size: 1em;
+  position: relative;
+  left: 0.1em;
+  bottom: 0.2em;
+  color: #3c4451;
+  text-align: center;
+}
+.notChecked {
+  background: none;
+}
+.valBtnSec {
+  height: 2em;
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: space-between;
+}
+.valBtn {
+  width: 31%;
+  background-color: #3c4451;
+  border-radius: 5px;
+  color: white;
+}
+.menu {
+  position: absolute;
+  right: 5%;
+}
+.loading {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  border: 3px solid lightgray;
+  border-top: 3px solid #3c4451;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.canClick {
+  background-color: #fbba00;
+}
+.cantClick {
+  background-color: gray;
+}

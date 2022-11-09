@@ -334,9 +334,10 @@ function App({
   const disposeCancelPromise = (stopSync) => {
     window.alert('약속이 취소되었습니다.');
     socketClient.leaveChattingRoom(roomId);
-    // setRoomId(null);
+    setRoomId(null);
     removeOpponentData();
-    setNowSettingPos('canceled');
+    changeMapHeight(0.8);
+    setNowSettingPos('end');
     setMatchId(null);
     setPromiseId(null);
     setConnectOnce(true);
@@ -372,10 +373,10 @@ function App({
   const cancelMatch = (stopSync) => {
     window.alert('매치가 취소되었습니다.');
     socketClient.leaveChattingRoom(roomId);
-    setRoomId(null);
+    // setRoomId(null);
     setOpponentUserData(null);
     removeOpponentData();
-    setNowSettingPos('end');
+    setNowSettingPos('canceled');
     setMatchId(null);
     setConnectOnce(true);
     promiseMakeStopSync && promiseMakeStopSync.then((stop) => stop());

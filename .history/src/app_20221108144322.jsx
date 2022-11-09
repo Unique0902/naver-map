@@ -15,7 +15,6 @@ import LowSec from './components/lowSec/lowSec';
 import LowBtns from './components/lowBtns/lowBtns';
 import DestinationBox from './components/destinationBox/destinationBox';
 import CompletedPage from './components/completedPage/completedPage';
-import CanceledPage from './components/canceledPage/canceledPage';
 
 function App({
   findMatchingService,
@@ -334,9 +333,10 @@ function App({
   const disposeCancelPromise = (stopSync) => {
     window.alert('약속이 취소되었습니다.');
     socketClient.leaveChattingRoom(roomId);
-    // setRoomId(null);
+    setRoomId(null);
     removeOpponentData();
-    setNowSettingPos('canceled');
+    changeMapHeight(0.8);
+    setNowSettingPos('end');
     setMatchId(null);
     setPromiseId(null);
     setConnectOnce(true);
@@ -356,7 +356,7 @@ function App({
   };
 
   useEffect(() => {
-    if (nowSettingPos == 'complete' || nowSettingPos == 'canceled') {
+    if (nowSettingPos == 'complete') {
       changeMapHeight(0);
     }
   }, [nowSettingPos]);
@@ -375,6 +375,7 @@ function App({
     setRoomId(null);
     setOpponentUserData(null);
     removeOpponentData();
+    changeMapHeight(0.8);
     setNowSettingPos('end');
     setMatchId(null);
     setConnectOnce(true);
@@ -1042,13 +1043,10 @@ function App({
         />
       )}
       {nowSettingPos == 'canceled' && (
-        <CanceledPage
+        <CompletedPage
           opponentUserData={opponentUserData}
           userDataService={userDataService}
           roomId={roomId}
-          setNowSettingPos={setNowSettingPos}
-          setRoomId={setRoomId}
-          changeMapHeight={changeMapHeight}
         />
       )}
       {/* <button

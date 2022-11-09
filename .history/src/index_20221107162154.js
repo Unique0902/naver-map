@@ -19,7 +19,7 @@ import PromiseService from './services/promise';
 import UserDataService from './services/userData';
 
 // const baseURL = process.env.REACT_APP_BASEURL;
-const baseURL = 'https://dutch-server.herokuapp.com';
+const baseURL = 'http://localhost:8080';
 const httpClient = new HttpClient(baseURL);
 const findMatchingService = new FindMatchingService(httpClient);
 const socketClient = new Socket(baseURL);

@@ -334,9 +334,10 @@ function App({
   const disposeCancelPromise = (stopSync) => {
     window.alert('약속이 취소되었습니다.');
     socketClient.leaveChattingRoom(roomId);
-    // setRoomId(null);
+    setRoomId(null);
     removeOpponentData();
-    setNowSettingPos('canceled');
+    changeMapHeight(0.8);
+    setNowSettingPos('end');
     setMatchId(null);
     setPromiseId(null);
     setConnectOnce(true);
@@ -356,7 +357,7 @@ function App({
   };
 
   useEffect(() => {
-    if (nowSettingPos == 'complete' || nowSettingPos == 'canceled') {
+    if (nowSettingPos == 'complete') {
       changeMapHeight(0);
     }
   }, [nowSettingPos]);
@@ -372,10 +373,11 @@ function App({
   const cancelMatch = (stopSync) => {
     window.alert('매치가 취소되었습니다.');
     socketClient.leaveChattingRoom(roomId);
-    setRoomId(null);
+    // setRoomId(null);
     setOpponentUserData(null);
     removeOpponentData();
-    setNowSettingPos('end');
+    changeMapHeight(0.8);
+    setNowSettingPos('canceled');
     setMatchId(null);
     setConnectOnce(true);
     promiseMakeStopSync && promiseMakeStopSync.then((stop) => stop());
@@ -1048,7 +1050,6 @@ function App({
           roomId={roomId}
           setNowSettingPos={setNowSettingPos}
           setRoomId={setRoomId}
-          changeMapHeight={changeMapHeight}
         />
       )}
       {/* <button
