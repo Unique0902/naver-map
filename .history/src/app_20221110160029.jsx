@@ -37,7 +37,7 @@ function App({
   const [map, setMap] = useState(null);
   const [nowUserPosition, setNowUserPosition] = useState(null);
   const [nowUserPosMarker, setNowUserPosMarker] = useState(null);
-  const [nowSettingPos, setNowSettingPos] = useState('loading');
+  const [nowSettingPos, setNowSettingPos] = useState('start');
   const [startAddress, setStartAddress] = useState('');
   const [startMarker, setStartMarker] = useState(null);
   const [startCircle, setStartCircle] = useState(null);
@@ -45,7 +45,6 @@ function App({
   const [arriveMarker, setArriveMarker] = useState(null);
   const [arriveCircle, setArriveCircle] = useState(null);
   const [matchDataNum, setMatchDataNum] = useState(null);
-  const [loadingStatus, setLoadingStatus] = useState('');
   const [opponentStartMarker, setOpponentStartMarker] = useState(null);
   const [opponentStartCircle, setOpponentStartCircle] = useState(null);
   const [opponentArriveMarker, setOpponentArriveMarker] = useState(null);
@@ -103,6 +102,7 @@ function App({
         let item = response.v2.addresses[0];
         const pos = new navermaps.LatLng(item.y, item.x);
         setSearchedLoc(pos);
+        setNowUserPosition(pos);
       }
     );
   };
@@ -133,7 +133,6 @@ function App({
   const getNowUserPosition = () => {
     navigator.geolocation.getCurrentPosition(
       function (position) {
-        setLoadingStatus('주소를 찾는중!');
         const pos = new navermaps.LatLng(
           position.coords.latitude,
           position.coords.longitude
@@ -175,7 +174,7 @@ function App({
 
   const getNowLocation = () => {
     if (window.nowLocation != undefined) {
-      setLoadingStatus(window.nowLocation);
+      alert(window.nowLocation);
       const pos = new navermaps.LatLng(
         window.nowLocation.latitude,
         window.nowLocation.longitude
@@ -192,6 +191,7 @@ function App({
     if (window.userId != undefined) {
       setUserId(window.userId);
     } else {
+      setUserId('dsafsafdsaf');
     }
   };
 
@@ -212,17 +212,15 @@ function App({
   }, [userId]);
 
   useEffect(() => {
-    if (userId && nowUserPosition) {
+    if (userId) {
       matchService.takeByUid(userId).then((data) => {
-        setLoadingStatus('데이터 찾는중..');
         disposeUserData(data);
       });
     }
-  }, [userId, nowUserPosition]);
+  }, [userId]);
 
   const disposeUserData = (data) => {
     if (data.myMatchData) {
-      setLoadingStatus('데이터 있네..');
       makeMyData(data.myMatchData);
       makeOpponentData(data.opponentMatchData);
       setRoomId(data.roomId);
@@ -254,9 +252,6 @@ function App({
         setNowSettingPos('connected');
       }
     } else {
-      setLoadingStatus('데이터 없네..');
-      setNowSettingPos('start');
-      changeMapHeight(0.8);
       setUserDataStatus('noData');
     }
   };
@@ -385,7 +380,6 @@ function App({
     setNowSettingPos('end');
     setMatchId(null);
     setConnectOnce(true);
-    changeMapHeight(0.8);
     promiseMakeStopSync && promiseMakeStopSync.then((stop) => stop());
     promiseMakeStopSync && setPromiseMakeStopSync(null);
     stopSync.then((stop) => stop());
@@ -825,7 +819,7 @@ function App({
         mapDivId={'maps-getting-started-uncontrolled'} // default: react-naver-map
         style={{
           width: '100%',
-          height: '0',
+          height: '80vh',
         }}
         naverRef={mapRef}
         defaultCenter={{ lat: 37.3595704, lng: 127.105399 }}
@@ -1059,17 +1053,13 @@ function App({
           changeMapHeight={changeMapHeight}
         />
       )}
-      {nowSettingPos == 'loading' && <div className={styles.loading}></div>}
-      {nowSettingPos == 'loading' && (
-        <div className={styles.safa}>{loadingStatus}</div>
-      )}
-      <button
+      {/* <button
         onClick={() => {
-          setUserId('dsafsafdsaf');
+          setUserId('kTS6spXzyTX8Ztdiglpchl8nD5i2');
         }}
       >
-        테스트 uid부여!
-      </button>
+        sfsa
+      </button> */}
     </>
   );
 }

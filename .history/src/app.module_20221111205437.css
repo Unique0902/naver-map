@@ -150,13 +150,10 @@ button {
 }
 .loading {
   width: 70vw;
-  position: relative;
-  left: 15vw;
-  top: 15vw;
   height: 70vw;
   border-radius: 50%;
-  border: 6px solid lightgray;
-  border-top: 6px solid #fbba00;
+  border: 3px solid lightgray;
+  border-top: 3px solid #3c4451;
   animation: spin 2s linear infinite;
 }
 

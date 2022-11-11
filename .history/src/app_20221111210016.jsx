@@ -1059,7 +1059,9 @@ function App({
           changeMapHeight={changeMapHeight}
         />
       )}
-      {nowSettingPos == 'loading' && <div className={styles.loading}></div>}
+      {nowSettingPos == 'loading' && (
+        <div className={styles.loading}>loadingStatus</div>
+      )}
       {nowSettingPos == 'loading' && (
         <div className={styles.safa}>{loadingStatus}</div>
       )}
