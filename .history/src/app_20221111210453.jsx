@@ -131,14 +131,13 @@ function App({
     );
   };
   const getNowUserPosition = () => {
-    setLoadingStatus(loadingStatus + '주소를 찾는중!');
+    setLoadingStatus('주소를 찾는중!');
     navigator.geolocation.getCurrentPosition(
       function (position) {
         setLoadingStatus(
-          loadingStatus +
-            '주소를 찾아냄!' +
-            position.coords.latitude +
-            position.coords.longitude
+          '주소를 찾아냄!',
+          position.coords.latitude,
+          position.coords.longitude
         );
         const pos = new navermaps.LatLng(
           position.coords.latitude,
@@ -181,7 +180,7 @@ function App({
 
   const getNowLocation = () => {
     if (window.nowLocation != undefined) {
-      setLoadingStatus(loadingStatus + window.nowLocation);
+      setLoadingStatus(window.nowLocation);
       const pos = new navermaps.LatLng(
         window.nowLocation.latitude,
         window.nowLocation.longitude
@@ -195,12 +194,9 @@ function App({
   }, [window.userId]);
 
   const getUserId = () => {
-    setLoadingStatus(loadingStatus + '유저아이디받는중');
     if (window.userId != undefined) {
-      setLoadingStatus(loadingStatus + '유저아이디받는중' + window.userId);
       setUserId(window.userId);
     } else {
-      setLoadingStatus(loadingStatus + '유저아이디없음');
     }
   };
 
@@ -222,9 +218,8 @@ function App({
 
   useEffect(() => {
     if (userId && nowUserPosition) {
-      setLoadingStatus(loadingStatus + '데이터 찾기시작..');
       matchService.takeByUid(userId).then((data) => {
-        setLoadingStatus(loadingStatus + '데이터 찾는중..');
+        setLoadingStatus('데이터 찾는중..');
         disposeUserData(data);
       });
     }
@@ -232,7 +227,7 @@ function App({
 
   const disposeUserData = (data) => {
     if (data.myMatchData) {
-      setLoadingStatus(loadingStatus + '데이터 있네..');
+      setLoadingStatus('데이터 있네..');
       makeMyData(data.myMatchData);
       makeOpponentData(data.opponentMatchData);
       setRoomId(data.roomId);
@@ -264,7 +259,7 @@ function App({
         setNowSettingPos('connected');
       }
     } else {
-      setLoadingStatus(loadingStatus + '데이터 없네..');
+      setLoadingStatus('데이터 없네..');
       setNowSettingPos('start');
       changeMapHeight(0.8);
       setUserDataStatus('noData');
