@@ -128,8 +128,7 @@ const CompletedPage = ({
                         isChecked1,
                         isChecked2,
                         isChecked3,
-                        roomId,
-                        userId
+                        roomId
                       )
                       .then((data) => {
                         setPraiseLoading(false);
@@ -159,8 +158,7 @@ const CompletedPage = ({
                         isChecked1,
                         isChecked2,
                         isChecked3,
-                        roomId,
-                        userId
+                        roomId
                       )
                       .then((data) => {
                         setIsPraised(true);

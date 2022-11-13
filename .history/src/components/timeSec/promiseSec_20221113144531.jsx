@@ -38,7 +38,7 @@ const PromiseSec = ({
             startLocRef={startLocRef}
           />
         )}
-        {promiseLev === 'arriveLoc' && (
+        {promiseLev === 'startLoc' && (
           <ArriveLocPromise
             promisingArriveLoc={promisingArriveLoc}
             setPromisingArriveLoc={setPromisingArriveLoc}
@@ -76,12 +76,12 @@ const PromiseSec = ({
             </button>
           </>
         )}
-        {promiseLev === 'arriveLoc' && (
+        {promiseLev === 'time' && (
           <>
             <button
               className={styles.beforeBtn}
               onClick={() => {
-                setPromiseLev('startLoc');
+                setPromiseLev('loc');
               }}
             >
               이전

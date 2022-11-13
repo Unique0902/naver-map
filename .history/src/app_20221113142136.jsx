@@ -260,7 +260,6 @@ function App({
         const minute = promiseTime.getMinutes();
         setPromisingTime({ bigTime, hour, minute });
         setPromisingStartLoc(promiseData.startLoc);
-        setPromisingArriveLoc(promiseData.arriveLoc);
       } else {
         setUserDataStatus('matchData');
         setNowSettingPos('connected');
@@ -1061,7 +1060,6 @@ function App({
           opponentUserData={opponentUserData}
           userDataService={userDataService}
           roomId={roomId}
-          userId={userId}
         />
       )}
       {nowSettingPos == 'canceled' && (
@@ -1072,7 +1070,6 @@ function App({
           setNowSettingPos={setNowSettingPos}
           setRoomId={setRoomId}
           changeMapHeight={changeMapHeight}
-          userId={userId}
         />
       )}
       {nowSettingPos == 'loading' && <div className={styles.loading}></div>}

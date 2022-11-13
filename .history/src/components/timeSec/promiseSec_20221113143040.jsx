@@ -38,7 +38,7 @@ const PromiseSec = ({
             startLocRef={startLocRef}
           />
         )}
-        {promiseLev === 'arriveLoc' && (
+        {promiseLev === 'startLoc' && (
           <ArriveLocPromise
             promisingArriveLoc={promisingArriveLoc}
             setPromisingArriveLoc={setPromisingArriveLoc}
@@ -53,8 +53,7 @@ const PromiseSec = ({
         )}
         {promiseLev === 'check' && (
           <PromiseCheck
-            promisingStartLoc={promisingStartLoc}
-            promisingArriveLoc={promisingArriveLoc}
+            promisingLoc={promisingLoc}
             promisingTime={promisingTime}
           />
         )}
@@ -76,12 +75,12 @@ const PromiseSec = ({
             </button>
           </>
         )}
-        {promiseLev === 'arriveLoc' && (
+        {promiseLev === 'time' && (
           <>
             <button
               className={styles.beforeBtn}
               onClick={() => {
-                setPromiseLev('startLoc');
+                setPromiseLev('loc');
               }}
             >
               이전
@@ -160,8 +159,7 @@ const PromiseSec = ({
                 noww.setSeconds(0);
                 promiseService
                   .make(
-                    promisingStartLoc,
-                    promisingArriveLoc,
+                    promisingLoc,
                     noww.toString(),
                     matchId,
                     roomId.toString()
@@ -238,12 +236,7 @@ const PromiseSec = ({
                 noww.setMinutes(promisingTime.minute);
                 noww.setSeconds(0);
                 promiseService
-                  .amend(
-                    promisingStartLoc,
-                    promisingArriveLoc,
-                    noww.toString(),
-                    promiseId
-                  )
+                  .amend(promisingLoc, noww.toString(), promiseId)
                   .then((data) => {
                     if (data) {
                       console.log('약속수정됨');

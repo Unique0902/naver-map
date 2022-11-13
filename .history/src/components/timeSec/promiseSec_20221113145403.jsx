@@ -65,6 +65,7 @@ const PromiseSec = ({
             <button
               className={styles.nextBtn}
               onClick={() => {
+                console.log(startLocRef);
                 const startLoc = startLocRef.current.value;
                 if (startLoc) {
                   setPromisingStartLoc(startLoc);

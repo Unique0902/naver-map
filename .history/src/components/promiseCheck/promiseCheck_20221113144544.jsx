@@ -10,12 +10,8 @@ const PromiseCheck = ({
     <section className={styles.checkSec}>
       <h2 className={styles.title}>약속 정보를 확인해주세요</h2>
       <div className={styles.loc}>
-        <p className={styles.miniTitle}>약속 출발 장소:</p>
-        <p className={styles.text}>{promisingStartLoc}</p>
-      </div>
-      <div className={styles.loc}>
-        <p className={styles.miniTitle}>약속 도착 장소:</p>
-        <p className={styles.text}>{promisingArriveLoc}</p>
+        <p className={styles.miniTitle}>약속장소:</p>
+        <p className={styles.text}>{promisingLoc}</p>
       </div>
       <div className={styles.time}>
         <p className={styles.miniTitle}>약속시간:</p>

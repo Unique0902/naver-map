@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { useRef } from 'react';
-import StartLocPromise from '../startLocPromise/startLocPromise';
+import StartLocPromise from '../locPromise/startLocPromise';
 import PromiseCheck from '../promiseCheck/promiseCheck';
 import TimePromise from '../timePromise/timePromise';
 import styles from './promiseSec.module.css';
-import ArriveLocPromise from '../arriveLocPromise/arriveLocPromise';
 
 const PromiseSec = ({
   promisingTime,
@@ -38,13 +37,6 @@ const PromiseSec = ({
             startLocRef={startLocRef}
           />
         )}
-        {promiseLev === 'arriveLoc' && (
-          <ArriveLocPromise
-            promisingArriveLoc={promisingArriveLoc}
-            setPromisingArriveLoc={setPromisingArriveLoc}
-            arriveLocRef={arriveLocRef}
-          />
-        )}
         {promiseLev === 'time' && (
           <TimePromise
             promisingTime={promisingTime}
@@ -53,45 +45,20 @@ const PromiseSec = ({
         )}
         {promiseLev === 'check' && (
           <PromiseCheck
-            promisingStartLoc={promisingStartLoc}
-            promisingArriveLoc={promisingArriveLoc}
+            promisingLoc={promisingLoc}
             promisingTime={promisingTime}
           />
         )}
       </section>
       <section className={styles.btnSec}>
-        {promiseLev === 'startLoc' && (
+        {promiseLev === 'loc' && (
           <>
             <button
               className={styles.nextBtn}
               onClick={() => {
-                const startLoc = startLocRef.current.value;
-                if (startLoc) {
-                  setPromisingStartLoc(startLoc);
-                }
-                setPromiseLev('arriveLoc');
-              }}
-            >
-              다음
-            </button>
-          </>
-        )}
-        {promiseLev === 'arriveLoc' && (
-          <>
-            <button
-              className={styles.beforeBtn}
-              onClick={() => {
-                setPromiseLev('startLoc');
-              }}
-            >
-              이전
-            </button>
-            <button
-              className={styles.promiseBtn}
-              onClick={() => {
-                const arriveLoc = arriveLocRef.current.value;
-                if (arriveLoc) {
-                  setPromisingArriveLoc(arriveLoc);
+                const loc = locRef.current.value;
+                if (loc) {
+                  setPromisingLoc(loc);
                 }
                 setPromiseLev('time');
               }}
@@ -105,7 +72,7 @@ const PromiseSec = ({
             <button
               className={styles.beforeBtn}
               onClick={() => {
-                setPromiseLev('arriveLoc');
+                setPromiseLev('loc');
               }}
             >
               이전
@@ -160,8 +127,7 @@ const PromiseSec = ({
                 noww.setSeconds(0);
                 promiseService
                   .make(
-                    promisingStartLoc,
-                    promisingArriveLoc,
+                    promisingLoc,
                     noww.toString(),
                     matchId,
                     roomId.toString()
@@ -182,10 +148,8 @@ const PromiseSec = ({
                         text: `${
                           promiseTime.getMonth() + 1
                         }월 ${promiseTime.getDate()}일 ${bigTime} ${hour}:${promiseTime.getMinutes()} <${
-                          promiseData.startLoc
-                        }>에서 <${
-                          promiseData.arriveLoc
-                        }>로의 약속이 만들어졌어요.`,
+                          promiseData.loc
+                        }>에서의 약속이 만들어졌어요.`,
                         userId: 'admin',
                         roomId,
                         date,
@@ -238,12 +202,7 @@ const PromiseSec = ({
                 noww.setMinutes(promisingTime.minute);
                 noww.setSeconds(0);
                 promiseService
-                  .amend(
-                    promisingStartLoc,
-                    promisingArriveLoc,
-                    noww.toString(),
-                    promiseId
-                  )
+                  .amend(promisingLoc, noww.toString(), promiseId)
                   .then((data) => {
                     if (data) {
                       console.log('약속수정됨');
@@ -261,10 +220,8 @@ const PromiseSec = ({
                         text: `${
                           promiseTime.getMonth() + 1
                         }월 ${promiseTime.getDate()}일 ${bigTime} ${hour}:${promiseTime.getMinutes()} <${
-                          promiseData.startLoc
-                        }>에서 <${
-                          promiseData.arriveLoc
-                        }>로의 약속으로 수정되었어요.`,
+                          promiseData.loc
+                        }>에서의 약속으로 수정되었어요.`,
                         userId: 'admin',
                         roomId,
                         date,

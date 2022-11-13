@@ -58,7 +58,6 @@ function App({
   const [promiseMakeStopSync, setPromiseMakeStopSync] = useState(null);
   const [promisingTime, setPromisingTime] = useState(null);
   const [promisingStartLoc, setPromisingStartLoc] = useState(null);
-  const [promisingArriveLoc, setPromisingArriveLoc] = useState(null);
   const [userDataStatus, setUserDataStatus] = useState(null);
   const [opponentUserData, setOpponentUserData] = useState(null);
   const [chattingArr, setChattingArr] = useState([
@@ -260,7 +259,6 @@ function App({
         const minute = promiseTime.getMinutes();
         setPromisingTime({ bigTime, hour, minute });
         setPromisingStartLoc(promiseData.startLoc);
-        setPromisingArriveLoc(promiseData.arriveLoc);
       } else {
         setUserDataStatus('matchData');
         setNowSettingPos('connected');
@@ -994,8 +992,6 @@ function App({
           setPromisingTime={setPromisingTime}
           promisingStartLoc={promisingStartLoc}
           setPromisingStartLoc={setPromisingStartLoc}
-          promisingArriveLoc={promisingArriveLoc}
-          setPromisingArriveLoc={setPromisingArriveLoc}
           promiseService={promiseService}
           promiseId={promiseId}
           setPromiseId={setPromiseId}
@@ -1061,7 +1057,6 @@ function App({
           opponentUserData={opponentUserData}
           userDataService={userDataService}
           roomId={roomId}
-          userId={userId}
         />
       )}
       {nowSettingPos == 'canceled' && (
@@ -1072,7 +1067,6 @@ function App({
           setNowSettingPos={setNowSettingPos}
           setRoomId={setRoomId}
           changeMapHeight={changeMapHeight}
-          userId={userId}
         />
       )}
       {nowSettingPos == 'loading' && <div className={styles.loading}></div>}

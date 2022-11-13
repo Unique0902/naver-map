@@ -1072,7 +1072,6 @@ function App({
           setNowSettingPos={setNowSettingPos}
           setRoomId={setRoomId}
           changeMapHeight={changeMapHeight}
-          userId={userId}
         />
       )}
       {nowSettingPos == 'loading' && <div className={styles.loading}></div>}
