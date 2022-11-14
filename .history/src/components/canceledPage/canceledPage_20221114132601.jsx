@@ -100,14 +100,7 @@ const CanceledPage = ({
             </p>
           </div>
           {isChecked1 && (
-            <button
-              className={styles.submitBtn}
-              onClick={() => {
-                window.ReactNativeWebView.postMessage('badReview');
-              }}
-            >
-              비매너 평가 하러가기
-            </button>
+            <button className={styles.submitBtn}>비매너 평가 하러가기</button>
           )}
           <div className={styles.praise}>
             <div
@@ -135,7 +128,7 @@ const CanceledPage = ({
             <button
               className={styles.submitBtn}
               onClick={() => {
-                window.ReactNativeWebView.postMessage('badReview');
+                window.ReactNativeWebView.postMessage('report');
               }}
             >
               비매너 평가 하러가기
@@ -164,14 +157,7 @@ const CanceledPage = ({
             </p>
           </div>
           {isChecked3 && (
-            <button
-              className={styles.reportBtn}
-              onClick={() => {
-                window.ReactNativeWebView.postMessage('report');
-              }}
-            >
-              신고 하러가기
-            </button>
+            <button className={styles.reportBtn}>신고 하러가기</button>
           )}
         </section>
       </section>

@@ -100,14 +100,7 @@ const CanceledPage = ({
             </p>
           </div>
           {isChecked1 && (
-            <button
-              className={styles.submitBtn}
-              onClick={() => {
-                window.ReactNativeWebView.postMessage('badReview');
-              }}
-            >
-              비매너 평가 하러가기
-            </button>
+            <button className={styles.submitBtn}>비매너 평가 하러가기</button>
           )}
           <div className={styles.praise}>
             <div

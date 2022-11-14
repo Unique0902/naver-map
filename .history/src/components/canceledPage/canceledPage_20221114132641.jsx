@@ -103,7 +103,7 @@ const CanceledPage = ({
             <button
               className={styles.submitBtn}
               onClick={() => {
-                window.ReactNativeWebView.postMessage('badReview');
+                window.ReactNativeWebView.postMessage('report');
               }}
             >
               비매너 평가 하러가기

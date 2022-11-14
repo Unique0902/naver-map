@@ -17,18 +17,12 @@ const EvalMenu = ({ btnRef, btnRef2, btnRef3, btnRef4 }) => {
         ref={btnRef2}
         className={styles.select}
         onClick={() => {
-          window.ReactNativeWebView.postMessage('badReview');
+          window.ReactNativeWebView.postMessage('report');
         }}
       >
         비매너 평가하기
       </button>
-      <button
-        ref={btnRef3}
-        className={styles.select}
-        onClick={() => {
-          window.ReactNativeWebView.postMessage('review');
-        }}
-      >
+      <button ref={btnRef3} className={styles.select}>
         후기작성
       </button>
       <button ref={btnRef4} className={styles.select}>

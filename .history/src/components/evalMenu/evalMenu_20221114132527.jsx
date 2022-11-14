@@ -26,7 +26,7 @@ const EvalMenu = ({ btnRef, btnRef2, btnRef3, btnRef4 }) => {
         ref={btnRef3}
         className={styles.select}
         onClick={() => {
-          window.ReactNativeWebView.postMessage('review');
+          window.ReactNativeWebView.postMessage('report');
         }}
       >
         후기작성
