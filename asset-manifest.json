@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/naver-map/static/css/main.a52235ff.css",
-    "main.js": "/naver-map/static/js/main.d3314b83.js",
+    "main.js": "/naver-map/static/js/main.20260f68.js",
     "index.html": "/naver-map/index.html",
     "main.a52235ff.css.map": "/naver-map/static/css/main.a52235ff.css.map",
-    "main.d3314b83.js.map": "/naver-map/static/js/main.d3314b83.js.map"
+    "main.20260f68.js.map": "/naver-map/static/js/main.20260f68.js.map"
   },
   "entrypoints": [
     "static/css/main.a52235ff.css",
-    "static/js/main.d3314b83.js"
+    "static/js/main.20260f68.js"
   ]
 }
