@@ -3,7 +3,17 @@ export default class FindMatchingService {
     this.http = http;
   }
 
-  make = async (uid, slat, slng, alat, alng, srad, arad) => {
+  make = async (
+    uid,
+    slat,
+    slng,
+    alat,
+    alng,
+    srad,
+    arad,
+    startLoc,
+    arriveLoc
+  ) => {
     const data = await this.http.fetch('/findmatch/make', {
       method: 'POST',
       body: JSON.stringify({
@@ -14,6 +24,8 @@ export default class FindMatchingService {
         alng,
         srad,
         arad,
+        startLoc,
+        arriveLoc,
       }),
     });
     return data;

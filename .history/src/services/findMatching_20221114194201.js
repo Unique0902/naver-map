@@ -3,7 +3,17 @@ export default class FindMatchingService {
     this.http = http;
   }
 
-  make = async (uid, slat, slng, alat, alng, srad, arad) => {
+  make = async (
+    uid,
+    slat,
+    slng,
+    alat,
+    alng,
+    srad,
+    arad,
+    startLoc,
+    arriveLoc
+  ) => {
     const data = await this.http.fetch('/findmatch/make', {
       method: 'POST',
       body: JSON.stringify({
@@ -14,6 +24,8 @@ export default class FindMatchingService {
         alng,
         srad,
         arad,
+        startLoc,
+        arriveLoc,
       }),
     });
     return data;
@@ -23,9 +35,24 @@ export default class FindMatchingService {
       method: 'GET',
     });
   };
+  take = async (id) => {
+    return await this.http.fetch(`/findmatch/${id}`, {
+      method: 'GET',
+    });
+  };
+  end = async (uid) => {
+    return await this.http.fetch(`/findmatch/end/${uid}`, {
+      method: 'GET',
+    });
+  };
   cancel = async (uid) => {
     return await this.http.fetch(`/findmatch/cancel/${uid}`, {
-      method: 'GET',
+      method: 'DELETE',
+    });
+  };
+  cancelById = async (id) => {
+    return await this.http.fetch(`/findmatch/cancelbyid/${id}`, {
+      method: 'DELETE',
     });
   };
 }
