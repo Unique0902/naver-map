@@ -16,9 +16,7 @@ const Chat = ({
           <div className={styles.timeSec}>
             <div className={styles.time}>{time}</div>
           </div>
-          <div className={`${styles.text} ${styles.myColor} ${styles.myText}`}>
-            {text}
-          </div>
+          <div className={`${styles.text} ${styles.myColor}`}>{text}</div>
         </div>
       ) : (
         <div className={styles.chat}>

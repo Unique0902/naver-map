@@ -38,6 +38,10 @@
   height: 100%;
   position: relative;
   margin: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .time {
   color: gray;
@@ -47,8 +51,6 @@
   border-radius: 10px;
   max-width: 80%;
   padding: 0.5em;
-}
-.myText {
   margin-right: 1.5em;
 }
 .myColor {

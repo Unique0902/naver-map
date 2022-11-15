@@ -37,7 +37,7 @@
 .timeSec {
   height: 100%;
   position: relative;
-  margin: 0.5em;
+  margin: 0.2em;
 }
 .time {
   color: gray;
@@ -47,8 +47,6 @@
   border-radius: 10px;
   max-width: 80%;
   padding: 0.5em;
-}
-.myText {
   margin-right: 1.5em;
 }
 .myColor {

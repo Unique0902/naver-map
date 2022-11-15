@@ -42,6 +42,9 @@
 .time {
   color: gray;
   font-size: 0.5em;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
 }
 .text {
   border-radius: 10px;

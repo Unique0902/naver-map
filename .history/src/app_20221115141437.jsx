@@ -495,6 +495,7 @@ function App({
               .take(data.data.matchData2Id)
               .then((matchData) => {
                 makeOpponentData(matchData.data);
+                console.log(1);
                 setMatchDataNum(null);
               });
           } else if (matchDataNum == 2) {
@@ -502,6 +503,7 @@ function App({
               .take(data.data.matchData1Id)
               .then((matchData) => {
                 makeOpponentData(matchData.data);
+                console.log(2);
                 setMatchDataNum(null);
               });
           }
@@ -549,6 +551,7 @@ function App({
       navermaps.Event.addListener(map, 'bounds_changed', () => {
         marker.setPosition(map.getCenter());
         circle.setCenter(map.getCenter());
+        console.log('hi');
       });
       navermaps.Event.addListener(map, 'dragend', () => {
         searchLocToAddress(map.getCenter());

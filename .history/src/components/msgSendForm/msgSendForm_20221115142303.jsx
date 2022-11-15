@@ -35,6 +35,7 @@ const MsgSendForm = ({
           const date = nowTime.toLocaleDateString();
           const text = chatRef.current.value;
           chatRef.current.value = '';
+
           chatService
             .postChat({ text, userId, roomId, date, time })
             .then(() => {});

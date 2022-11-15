@@ -11,7 +11,7 @@
   justify-content: end;
   align-items: center;
   width: 100%;
-  margin: 1em 0;
+  margin: 1em 1em;
 }
 
 .notice {
@@ -47,9 +47,6 @@
   border-radius: 10px;
   max-width: 80%;
   padding: 0.5em;
-}
-.myText {
-  margin-right: 1.5em;
 }
 .myColor {
   color: white;

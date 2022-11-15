@@ -7,7 +7,6 @@
   top: 5vh;
   left: 5vw;
   width: 90vw;
-  box-sizing: border-box;
   border: 1px solid lightgray;
   background-color: white;
   border-radius: 20px;
@@ -15,14 +14,14 @@
   align-items: center;
 }
 .startText {
-  width: 44%;
-  font-size: 1rem;
+  width: 40%;
+  font-size: 1.2rem;
 }
 .middleText {
-  width: 12%;
+  width: 20%;
   text-align: center;
 }
 .arriveText {
-  width: 44%;
-  font-size: 1rem;
+  width: 40%;
+  font-size: 1.2rem;
 }

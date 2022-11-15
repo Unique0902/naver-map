@@ -61,7 +61,28 @@ function App({
   const [promisingArriveLoc, setPromisingArriveLoc] = useState(null);
   const [userDataStatus, setUserDataStatus] = useState(null);
   const [opponentUserData, setOpponentUserData] = useState(null);
-  const [chattingArr, setChattingArr] = useState([]);
+  const [chattingArr, setChattingArr] = useState([
+    {
+      id: 543,
+      roomId: 3,
+      text: '감사합니다. 저도 즐거웠어요',
+      createdAt: '10:30 오전',
+      isMe: false,
+      userId: 'sfss',
+      date: '2021년 2월 20일',
+      time: '오후 3:30',
+    },
+    {
+      id: 6324,
+      roomId: 3,
+      text: '님들~ 저도 덕분에 방송할때 너무 행복합니다.',
+      createdAt: '10:30 오전',
+      isMe: true,
+      userId: 'sfss',
+      date: '2021년 2월 20일',
+      time: '오후 3:30',
+    },
+  ]);
 
   const searchAddressToCoordinate = (address) => {
     navermaps.Service.geocode(
@@ -448,6 +469,18 @@ function App({
         if (data.roomId) {
           setRoomId(data.roomId);
           setMatchDataNum(1);
+          let nowTime = new Date();
+          const time = nowTime.toLocaleTimeString();
+          const date = nowTime.toLocaleDateString();
+          chatService.postChat({
+            text: `${nowTime.getFullYear()}년 ${
+              nowTime.getMonth() + 1
+            }월 ${nowTime.getDate()}일`,
+            userId: 'admin',
+            roomId,
+            date,
+            time,
+          });
         }
         if (data.matchId) {
           setMatchId(data.matchId);
@@ -495,6 +528,7 @@ function App({
               .take(data.data.matchData2Id)
               .then((matchData) => {
                 makeOpponentData(matchData.data);
+                console.log(1);
                 setMatchDataNum(null);
               });
           } else if (matchDataNum == 2) {
@@ -502,6 +536,7 @@ function App({
               .take(data.data.matchData1Id)
               .then((matchData) => {
                 makeOpponentData(matchData.data);
+                console.log(2);
                 setMatchDataNum(null);
               });
           }
@@ -549,6 +584,7 @@ function App({
       navermaps.Event.addListener(map, 'bounds_changed', () => {
         marker.setPosition(map.getCenter());
         circle.setCenter(map.getCenter());
+        console.log('hi');
       });
       navermaps.Event.addListener(map, 'dragend', () => {
         searchLocToAddress(map.getCenter());
