@@ -162,7 +162,7 @@ function App({
 
   const getNowLocation = () => {
     if (window.nowLocation != undefined) {
-      setLoadingStatus(loadingStatus + '앱제공주소' + window.nowLocation);
+      setLoadingStatus(loadingStatus + window.nowLocation);
       const pos = new navermaps.LatLng(
         window.nowLocation.latitude,
         window.nowLocation.longitude
