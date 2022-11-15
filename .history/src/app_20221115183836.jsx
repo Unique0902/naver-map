@@ -163,7 +163,6 @@ function App({
 
   const getNowLocation = () => {
     if (window.nowLocation != undefined) {
-      alert('앱에서 주소를 찾아냄');
       setLoadingStatus(loadingStatus + '앱제공주소' + window.nowLocation);
       const pos = new navermaps.LatLng(
         window.nowLocation.latitude,
