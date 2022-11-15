@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  height: 20%;
   width: 100%;
   margin: 1em 0;
 }
@@ -24,16 +25,17 @@
   margin: 0 3%;
 }
 .userImg {
-  font-size: 2rem;
 }
 .timeSec {
   height: 100%;
+  width: 14%;
   position: relative;
-  margin: 0.5em;
 }
 .time {
   color: gray;
   font-size: 0.5em;
+  position: absolute;
+  bottom: 15%;
 }
 .text {
   border-radius: 10px;

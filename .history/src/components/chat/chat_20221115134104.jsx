@@ -21,7 +21,7 @@ const Chat = ({
       ) : (
         <div className={styles.chat}>
           <div className={styles.imgSec}>
-            <i className={`fa-solid fa-circle-user ${styles.userImg}`}></i>
+            <i className='fa-solid fa-circle-user'></i>
           </div>
           <div className={`${styles.text} ${styles.otherColor}`}>{text}</div>
           <div className={styles.timeSec}>

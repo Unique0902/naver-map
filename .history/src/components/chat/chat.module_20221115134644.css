@@ -28,6 +28,7 @@
 }
 .timeSec {
   height: 100%;
+  width: 14%;
   position: relative;
   margin: 0.5em;
 }
