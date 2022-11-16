@@ -4,15 +4,10 @@
   border-top: 2px solid lightgray;
 }
 .opponentSec {
-  height: 10%;
+  height: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.opponentText {
-  margin: 0;
-  font-size: 1rem;
 }
 .chatsSec {
   height: 70%;

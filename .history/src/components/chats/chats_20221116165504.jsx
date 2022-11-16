@@ -18,7 +18,7 @@ const Chats = ({
       <section className={styles.chattingSec}>
         <section className={styles.opponentSec}>
           <p className={styles.opponentText}>
-            {opponentUserData && `상대 이름: ${opponentUserData.name}`}
+            {opponentUserData && `상대방 이름: ${opponentUserData.name}`}
           </p>
         </section>
         <section className={styles.chatsSec}>

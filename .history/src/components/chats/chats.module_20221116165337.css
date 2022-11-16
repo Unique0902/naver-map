@@ -8,11 +8,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1rem;
 }
 
 .opponentText {
   margin: 0;
-  font-size: 1rem;
 }
 .chatsSec {
   height: 70%;
