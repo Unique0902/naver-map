@@ -549,11 +549,7 @@ function App({
   const makeMapEvent = () => {
     if (marker != null && circle != null) {
       removeMapEvent();
-      // navermaps.Event.addListener(map, 'bounds_changed', () => {
-      //   marker.setPosition(map.getCenter());
-      //   circle.setCenter(map.getCenter());
-      // });
-      navermaps.Event.addListener(map, 'drag', () => {
+      navermaps.Event.addListener(map, 'bounds_changed', () => {
         marker.setPosition(map.getCenter());
         circle.setCenter(map.getCenter());
       });
