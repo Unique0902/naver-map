@@ -796,7 +796,6 @@ function App({
       arriveCircle.setVisible(false);
       setMarker(startMarker);
       setCircle(startCircle);
-      map.setCenter(startMarker.getPosition());
     } else if (destination === 'amendStart') {
       map.setCenter(startMarker.getPosition());
       setSearchedAddress(startAddress);
@@ -1086,15 +1085,15 @@ function App({
       )}
       {nowSettingPos == 'loading' && <div className={styles.loading}></div>}
       {nowSettingPos == 'loading' && (
-        <div className={styles.loadingStatus}>{loadingStatus}</div>
+        <div className={styles.safa}>{loadingStatus}</div>
       )}
-      {/* <button
+      <button
         onClick={() => {
           setUserId('dsafsafdsaf');
         }}
       >
         테스트 uid부여!
-      </button> */}
+      </button>
     </>
   );
 }

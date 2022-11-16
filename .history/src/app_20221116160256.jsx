@@ -581,7 +581,7 @@ function App({
       })
     );
     makeCircle(isVisible);
-    setArriveCircle(
+    setCircle(
       new navermaps.Circle({
         map: map,
         center: nowUserPosition,
@@ -658,7 +658,7 @@ function App({
         changeRadiusRefValue(startCircle.getRadius());
       } else if (nowSettingPos === 'amendArrive') {
         makeMapEvent();
-        changeCircleColor(circle, '#5347AA', '#5347AA');
+        changeCircleColor(circle, '#FBBA00', '#5347AA');
         changeMarkerIcon(marker, arriveMarkerImg);
         changeRadiusRefValue(arriveCircle.getRadius());
       }
@@ -752,15 +752,10 @@ function App({
     if (nowSettingPos === 'start') {
       registerLocInform(setStartAddress, 'arrive');
       setStartMarker(marker);
-      setStartCircle(circle);
-      arriveMarker.setPosition(map.getCenter());
-      arriveMarker.setVisible(true);
-      setMarker(arriveMarker);
+      setMarker(returnMarker(map.getCenter(), map, arriveMarkerImg));
       const rad = circle.getRadius();
-      arriveCircle.setCenter(map.getCenter());
-      arriveCircle.setRadius(rad);
-      arriveCircle.setVisible(true);
-      setCircle(arriveCircle);
+      setStartCircle(circle);
+      setCircle(returnCircle(map, map.getCenter(), rad, '#5347AA', '#5347AA'));
     } //
     else if (nowSettingPos === 'arrive') {
       registerLocInform(setArriveAddress, 'end');
@@ -792,11 +787,10 @@ function App({
     setNowSettingPos(destination);
     if (destination === 'start') {
       setStartAddress('');
-      arriveMarker.setVisible(false);
-      arriveCircle.setVisible(false);
-      setMarker(startMarker);
-      setCircle(startCircle);
-      map.setCenter(startMarker.getPosition());
+      startMarker.setVisible(false);
+      startCircle.setVisible(false);
+      setStartMarker(null);
+      setStartCircle(null);
     } else if (destination === 'amendStart') {
       map.setCenter(startMarker.getPosition());
       setSearchedAddress(startAddress);
@@ -1086,7 +1080,7 @@ function App({
       )}
       {nowSettingPos == 'loading' && <div className={styles.loading}></div>}
       {nowSettingPos == 'loading' && (
-        <div className={styles.loadingStatus}>{loadingStatus}</div>
+        <div className={styles.safa}>{loadingStatus}</div>
       )}
       {/* <button
         onClick={() => {
