@@ -1092,13 +1092,13 @@ function App({
       {nowSettingPos == 'loading' && (
         <div className={styles.loadingStatus}>{loadingStatus}</div>
       )}
-      {/* <button
+      <button
         onClick={() => {
           setUserId('dsafsafdsaf');
         }}
       >
         테스트 uid부여!
-      </button> */}
+      </button>
     </>
   );
 }
