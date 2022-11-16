@@ -549,7 +549,7 @@ function App({
   const makeMapEvent = () => {
     if (marker != null && circle != null) {
       removeMapEvent();
-      navermaps.Event.addListener(map, 'drag', () => {
+      navermaps.Event.addListener(map, 'bounds_changed', () => {
         marker.setPosition(map.getCenter());
         circle.setCenter(map.getCenter());
       });
@@ -567,7 +567,7 @@ function App({
   };
 
   const removeMapEvent = () => {
-    navermaps.Event.clearListeners(map, 'drag');
+    navermaps.Event.clearListeners(map, 'bounds_changed');
     navermaps.Event.clearListeners(map, 'dragend');
     navermaps.Event.clearListeners(map, 'zoom_changed');
   };
@@ -1092,13 +1092,13 @@ function App({
       {nowSettingPos == 'loading' && (
         <div className={styles.loadingStatus}>{loadingStatus}</div>
       )}
-      {/* <button
+      <button
         onClick={() => {
           setUserId('dsafsafdsaf');
         }}
       >
         테스트 uid부여!
-      </button> */}
+      </button>
     </>
   );
 }
