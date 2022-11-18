@@ -602,11 +602,6 @@ function App({
     makeMapEvent();
     makeNowUserPosMarker();
   };
-  useEffect(() => {
-    if (circle) {
-      changeUserRadius();
-    }
-  }, [circle]);
 
   useEffect(() => {
     if (map != null && nowUserPosition != null && userDataStatus == 'noData') {

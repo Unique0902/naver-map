@@ -534,7 +534,7 @@ function App({
         new navermaps.Circle({
           map: map,
           center: nowUserPosition,
-          radius: 200,
+          radius: 50,
           strokeColor: '#5347AA',
           strokeOpacity: 0.5,
           strokeWeight: 2,
@@ -589,7 +589,7 @@ function App({
       new navermaps.Circle({
         map: map,
         center: nowUserPosition,
-        radius: 200,
+        radius: 50,
         strokeColor: '#5347AA',
         strokeOpacity: 0.5,
         strokeWeight: 2,
@@ -602,11 +602,6 @@ function App({
     makeMapEvent();
     makeNowUserPosMarker();
   };
-  useEffect(() => {
-    if (circle) {
-      changeUserRadius();
-    }
-  }, [circle]);
 
   useEffect(() => {
     if (map != null && nowUserPosition != null && userDataStatus == 'noData') {
